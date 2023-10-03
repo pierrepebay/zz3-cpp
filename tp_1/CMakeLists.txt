@@ -37,10 +37,10 @@ message ( STATUS "Compiler flags: ${CMAKE_CXX_FLAGS}" )
 
 # Sources #-----------------------------------------------------------------------------------------
 set ( ZZ3_HEADERS
-      #src/cartesien.hpp
+      src/cartesian.hpp
       #src/nuage.hpp
-      #src/point.hpp
-      #src/polaire.hpp
+      src/point.hpp
+      src/polar.hpp
       #src/vecteur.hpp
     )
 
