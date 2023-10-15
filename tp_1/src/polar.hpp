@@ -1,8 +1,9 @@
 #ifndef TP1_POLAR_HPP
 #define TP1_POLAR_HPP
 
-#include "point.hpp"
-// #include "cartesian.hpp"
+#include "Point.hpp"
+#include "Cartesian.hpp"
+class Cartesian;
 
 class Polar : public Point
 {
@@ -17,6 +18,7 @@ public:
   ) : phi_coord_(phi),
       r_coord_(r)
   { }
+  Polar(const Cartesian & c);
 
   double getAngle() const { return phi_coord_; }
   double getDistance() const { return r_coord_; }
@@ -27,10 +29,10 @@ public:
     stream << "(a=" << phi_coord_ << ";d=" << r_coord_ << ")";
   }
 
-  // void convert(Cartesian & c) const {
-  //   c.setX(r_coord_ * std::cos(phi_coord_ * M_PI / 180));
-  //   c.setY(r_coord_ * std::sin(phi_coord_ * M_PI / 180));
-  // }
+  void convert(Polar&) const override;
+
+  void convert(Cartesian&) const override;
+
 private:
   double phi_coord_;
   double r_coord_;

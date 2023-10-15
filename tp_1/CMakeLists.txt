@@ -37,19 +37,19 @@ message ( STATUS "Compiler flags: ${CMAKE_CXX_FLAGS}" )
 
 # Sources #-----------------------------------------------------------------------------------------
 set ( ZZ3_HEADERS
-      src/cartesian.hpp
+      src/Cartesian.hpp
       #src/nuage.hpp
-      src/point.hpp
-      src/polar.hpp
-      #src/vecteur.hpp
+      src/Point.hpp
+      src/Polar.hpp
+      #src/vector.hpp
     )
 
 set ( ZZ3_SOURCES
-      #src/cartesien.cpp
+      src/Cartesian.cpp
       #src/nuage.cpp
-      #src/point.cpp
-      #src/polaire.cpp
-      #src/vecteur.cpp
+      src/Point.cpp
+      src/Polar.cpp
+      #src/vector.cpp
     )
 
 set ( ZZ3_HEADERS_TEST
@@ -67,8 +67,8 @@ add_executable ( ${CMAKE_PROJECT_NAME}_point
                  ${ZZ3_SOURCES}
                )
 
-add_executable ( ${CMAKE_PROJECT_NAME}_vecteur
-                 src/main_vecteur.cpp
+add_executable ( ${CMAKE_PROJECT_NAME}_vector
+                 src/main_vector.cpp
                  ${ZZ3_HEADERS}
                  ${ZZ3_SOURCES}
                )
@@ -86,8 +86,8 @@ add_executable ( ${CMAKE_PROJECT_NAME}_test
 set_target_properties ( ${CMAKE_PROJECT_NAME}_point PROPERTIES LINKER_LANGUAGE C )
 target_link_libraries ( ${CMAKE_PROJECT_NAME}_point ${CMAKE_THREAD_LIBS_INIT} )
 
-set_target_properties ( ${CMAKE_PROJECT_NAME}_vecteur PROPERTIES LINKER_LANGUAGE C )
-target_link_libraries ( ${CMAKE_PROJECT_NAME}_vecteur ${CMAKE_THREAD_LIBS_INIT} )
+set_target_properties ( ${CMAKE_PROJECT_NAME}_vector PROPERTIES LINKER_LANGUAGE C )
+target_link_libraries ( ${CMAKE_PROJECT_NAME}_vector ${CMAKE_THREAD_LIBS_INIT} )
 
 set_target_properties ( ${CMAKE_PROJECT_NAME}_test PROPERTIES LINKER_LANGUAGE C )
 target_link_libraries ( ${CMAKE_PROJECT_NAME}_test ${CMAKE_THREAD_LIBS_INIT} )
