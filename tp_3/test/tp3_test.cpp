@@ -48,7 +48,7 @@ TEST_CASE ( "TP3_Chaine::Exception" ) {
 }
 
 //------------------------------------------------------------------------------------------------ 2
-/*TEST_CASE ( "TP3_Chaine::ConversionSimple" ) {
+TEST_CASE ( "TP3_Chaine::ConversionSimple" ) {
  std::string n = "Smith";
  int i = 10;
  double d = 13.27;
@@ -86,7 +86,7 @@ TEST_CASE ( "TP3_Chaine::Exception" ) {
  }
 
  REQUIRE ( erreur == 4 );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 3
 /*TEST_CASE ( "TP3_Chaine::ConversionVariadic" ) {
