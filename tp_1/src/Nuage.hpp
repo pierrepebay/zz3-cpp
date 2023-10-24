@@ -1,5 +1,5 @@
-#ifndef TP_1_NUAGE_HPP
-#define TP_1_NUAGE_HPP
+#ifndef TP1_NUAGE_HPP
+#define TP1_NUAGE_HPP
 
 #include "Point.hpp"
 #include "Cartesian.hpp"
@@ -55,4 +55,4 @@ public:
   }
 };
 
-#endif /* TP_1_NUAGE_HPP */
+#endif /* TP1_NUAGE_HPP */
