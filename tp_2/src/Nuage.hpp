@@ -44,4 +44,23 @@ private:
   std::vector<std::unique_ptr<T>> points_;
 };
 
+template <typename T>
+T barycentre_v1(const Nuage<T>& n) {
+  // check if cloud of points is empty or not
+  if (n.size() == 0) {
+    return T();
+  }
+  Cartesian barycenter;
+  for (const auto& p : n) {
+    Cartesian c;
+    p->convert(c);
+    barycenter.setX(barycenter.getX() + c.getX());
+    barycenter.setY(barycenter.getY() + c.getY());
+  }
+  barycenter.setX(barycenter.getX() / n.size());
+  barycenter.setY(barycenter.getY() / n.size());
+  return barycenter;
+}
+
+
 #endif /* TP2_NUAGE_HPP */
