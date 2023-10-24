@@ -19,6 +19,21 @@ public:
       y_coord_(y)
   { }
   Cartesian(const Polar & p);
+  // copy constructor
+  Cartesian(const Cartesian&) = default;
+  // move constructor
+  Cartesian(Cartesian&&) = default;
+  // copy assignment
+  Cartesian& operator=(const Cartesian&) = default;
+  // move assignment
+  Cartesian& operator=(Cartesian&&) = default;
+  // destructor
+  ~Cartesian() = default;
+
+  // override clone function
+  Point* clone() const override {
+    return new Cartesian(*this);
+  }
 
   double getX() const { return x_coord_; }
   double getY() const { return y_coord_; }

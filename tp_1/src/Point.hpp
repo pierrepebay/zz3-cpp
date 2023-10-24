@@ -12,9 +12,13 @@ class Point
 {
 public:
   virtual void display(std::ostream & stream) const = 0;
-
   virtual void convert(Cartesian&) const = 0;
   virtual void convert(Polar&) const = 0;
+
+  // clone function
+  virtual Point* clone() const = 0;
+
+  virtual ~Point() = default;
 };
 
 std::ostream& operator<<(std::ostream& os, const Point& p);

@@ -19,6 +19,21 @@ public:
       r_coord_(r)
   { }
   Polar(const Cartesian & c);
+  // copy constructor
+  Polar(const Polar&) = default;
+  // move constructor
+  Polar(Polar&&) = default;
+  // copy assignment
+  Polar& operator=(const Polar&) = default;
+  // move assignment
+  Polar& operator=(Polar&&) = default;
+  // destructor
+  ~Polar() = default;
+
+  // override clone function
+  Point* clone() const override {
+    return new Polar(*this);
+  }
 
   double getAngle() const { return phi_coord_; }
   double getDistance() const { return r_coord_; }
