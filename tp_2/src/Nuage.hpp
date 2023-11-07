@@ -62,5 +62,21 @@ T barycentre_v1(const Nuage<T>& n) {
   return barycenter;
 }
 
+// specialize barycenter function for polar points
+inline Polar barycentre_v1(const Nuage<Polar>& n) {
+  // check if cloud of points is empty or not
+  if (n.size() == 0) {
+    return Polar();
+  }
+  Polar barycenter;
+  for (const auto& p : n) {
+    barycenter.setAngle(barycenter.getAngle() + p->getAngle());
+    barycenter.setDistance(barycenter.getDistance() + p->getDistance());
+  }
+  barycenter.setAngle(barycenter.getAngle() / n.size());
+  barycenter.setDistance(barycenter.getDistance() / n.size());
+  return barycenter;
+}
+
 
 #endif /* TP2_NUAGE_HPP */
